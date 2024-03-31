@@ -5,7 +5,6 @@
 
 include <..\BoardGameSystem.scad>;
 
-
 cardWidth=68;
 cardHeight=92;
 boxWidth=cardHeight+3;
@@ -20,7 +19,8 @@ boxLength2=184;
 hexSize=6;
 
 /* FINAL SETUp */
-/*
+
+/* CardBox1 */
 color("blue") {
 
     translate ([boxLength,0,0]) rotate([0,0,90]) 
@@ -31,6 +31,7 @@ color("blue") {
         cardBox([boxWidth, boxLength, boxHeight],corner=3, hexBottom=hexSize, cutouts=15);
 }
 
+/* CardBox2 */
 color("green") {
     translate ([boxLength2+boxWidth+1,boxWidth+5,0]) rotate([0,0,90]) 
         cardBox([boxWidth, boxLength2, boxHeight], corner=3, hexBottom=hexSize, cutouts=13);
@@ -38,23 +39,22 @@ color("green") {
         cardBox([boxWidth, boxLength2, boxHeight], corner=3, hexBottom=hexSize, cutouts=13);
 
 }
-*/
 
+/* MoneyBoxes */
 color("red") {
-//    translate ([boxLength2+boxWidth+56+2,boxWidth+52,0]) rotate([0,0,90]) 
-//        tokenBox([moneyWidth+6, 50+6, boxHeight], corner=3, hexBottom=hexSize, txtLabel="Money 1", txtSize=14);
-//    translate ([boxLength2+boxWidth+56+56+4,boxWidth+52,0]) rotate([0,0,90]) 
-//        tokenBox([moneyWidth+6, 50+6, boxHeight], corner=3, hexBottom=hexSize, txtLabel="Money 5 & 10", txtSize=14);
-
+    translate ([boxLength2+boxWidth+56+2,boxWidth+52,0]) rotate([0,0,90]) 
+        tokenBox([moneyWidth+6, 50+6, boxHeight], corner=3, hexBottom=hexSize, txtLabel="Money 1", txtSize=14);
+    translate ([boxLength2+boxWidth+56+56+4,boxWidth+52,0]) rotate([0,0,90]) 
+        tokenBox([moneyWidth+6, 50+6, boxHeight], corner=3, hexBottom=hexSize, txtLabel="Money 5 & 10", txtSize=14);
 }
 
-
+/* TokenBox */
 color("yellow") {
-//    translate ([boxLength2+boxWidth+2,boxWidth+2,0]) 
-//        tokenBox([114, 48, boxHeight], corner=3, hexBottom=hexSize, txtLabel="Tokens", txtSize=14, containersX=2);  
+    translate ([boxLength2+boxWidth+2,boxWidth+2,0]) 
+        tokenBox([114, 48, boxHeight], corner=3, hexBottom=hexSize, txtLabel="Tokens", txtSize=14, containersX=2);  
 }
 
-
+/* Dividers */
 dividers=["Player","Core","Expansion","Master","Meta","Premium","Promo","ProPlayer","Starter"];
 
 translate([0,-80,0])
