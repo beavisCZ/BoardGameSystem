@@ -3,7 +3,7 @@
     166mmx107mmx35mm
 */
 
-include <BoardGameSystem.scad>;
+include <..\BoardGameSystem.scad>;
 
 //gamebox
 color("orange")
