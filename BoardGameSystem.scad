@@ -2,6 +2,28 @@
     BoardGame System v 1.0 31.3.2024 by Martin Kaspar
 */
 
+module divider(size=[92,68,1.4], corner=3, txtLabel="Divider", txtSize=8, txtFont="Arial"){
+    difference(){
+        union(){
+        roundedBox([size[0],size[1]-4,size[2]],corner);
+        translate([-2,size[1]-24,0])
+            roundedBox([size[0]+4,20,size[2]],corner);
+        //ousko
+        translate([-2,size[1]-5-corner*2,0])
+            roundedBox([size[0]/1.5,16,size[2]],corner);
+        }
+
+        translate([size[0]/4+5,size[1]-6,0.4])
+            linear_extrude(5)
+                text(txtLabel,size=txtSize, halign="center", font=txtFont);
+        translate([10,10,-1])
+            roundedBox([size[0]/2-15, size[1]-25, 5], corner);
+        translate([size[0]/2+5,10,-1])
+            roundedBox([size[0]/2-15, size[1]-25, 5], corner);
+   }   
+}
+
+
 module cardBox(size,corner=3,hexBottom=0, cutouts=10, wallThickness=2
     , cutoutThickness=2){
         difference() {
